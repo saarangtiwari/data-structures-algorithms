@@ -1,0 +1,21 @@
+// Function to find whether all the characters in string are unique
+
+function hasUniqueCharacters(inputString) {
+  const characterHash = new Map();
+  const characters = inputString.split('');
+   console.log(characters);
+
+  for(let i in characters) {
+   console.log(characters[i]);
+   const char = characters[i].toLowerCase();
+   if(characterHash.has(char)) {
+     return false;
+   } else {
+     characterHash.set(char);
+   }
+  }
+  return true;
+}
+
+console.log(hasUniqueCharacters("ThisISate"));
+console.log(hasUniqueCharacters("This"));
