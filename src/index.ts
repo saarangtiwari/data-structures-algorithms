@@ -1,19 +1,14 @@
-function checkArrayExistence(arr1: string[], arr2: string[]): boolean {
-  const arr1Hash = new Map<string, string>();
-  for (let i = 0; i < arr1.length; i++) {
-    arr1Hash.set(arr1[i], arr1[i]);
-  }
+import { BST } from "./binary-search-tree";
 
-  for (let i = 0; i < arr2.length; i++) {
-    if (arr1Hash.has(arr2[i])) {
-      return true;
-    }
-  }
+const bst = new BST.BinarySearchTree();
+bst.insert(9);
+bst.insert(4);
+bst.insert(6);
+bst.insert(20);
+bst.insert(170);
+bst.insert(15);
+bst.insert(1);
+// console.log(bst.root);
 
-  return false;
-}
-
-console.log(checkArrayExistence(["a", "b", "c", "d"], ["x", "y", "z", "a"]));
-console.log(checkArrayExistence(["a", "b", "c", "d"], ["x", "y", "z"]));
-
-// https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/learn/lecture/12441334#content
+console.log(bst.lookup(15));
+console.log(bst.lookup(4));
